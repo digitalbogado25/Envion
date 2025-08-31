@@ -1,0 +1,145 @@
+/* Sección de Inicio (Con imagen de fondo) */
+#inicio {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff; /* Color del texto por defecto en esta sección */
+    
+    /* Imagen de fondo */
+    background: url('../multimedia/Comunidad.webp') no-repeat center center;
+    background-size: cover;
+}
+
+/* Capa de superposición para que el texto sea legible */
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura semi-transparente */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre la capa oscura */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para el texto */
+}
+
+/* El resto de tu CSS (sin cambios) */
+:root {
+    --primary-color: #0d6efd; /* Azul de Bootstrap */
+    --accent-color: #20c997; /* Verde/Cian para resaltar */
+    --light-color: #f8f9fa; /* Blanco casi puro */
+    --dark-color: #212529; /* Gris muy oscuro para fondos */
+    --card-bg: #2b3035; /* Gris oscuro para tarjetas */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Navegación */
+.navbar {
+    background-color: rgba(33, 37, 41, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--light-color);
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Secciones generales */
+.section-padding {
+    padding: 80px 0;
+}
+
+#nosotros, #tutores {
+    background-color: var(--dark-color);
+}
+
+#talleres, #coordinadora {
+    background-color: var(--card-bg);
+}
+
+/* Encabezados y párrafos */
+h1, h2, h3, h4, h5 {
+    color: var(--light-color);
+    font-weight: 700;
+}
+
+p, .lead {
+    color: #e9ecef;
+}
+
+/* Cards (Talleres) */
+.card {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--dark-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card .fas {
+    color: var(--accent-color);
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+    border-color: #16a085;
+}
+
+/* Footer */
+footer {
+    background-color: #31373b;
+    color: var(--light-color);
+}
+
+/* Íconos de contacto */
+#contacto .fas, #contacto .fab {
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+#contacto a:hover .fab, #contacto a:hover .fas {
+    color: var(--accent-color);
+}
+
+#contacto a {
+    color: var(--light-color);
+}
+
+.card .text-muted {
+    color: #a0a0a0 !important;
+}
